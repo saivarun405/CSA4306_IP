@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Register{% endblock %}
+{% block content %}<section class="auth-wrap"><div class="auth-card"><p class="eyebrow">JOIN THE LIBRARY</p><h1>Create account</h1><form method="post" class="form">
+<label>Full name<input name="name" required maxlength="100" placeholder="Your full name"></label>
+<label>College email<input type="email" name="email" required placeholder="you@college.edu"></label>
+<label>Department / course<input name="department" maxlength="100" placeholder="e.g. CSE"></label>
+<label>Password<input type="password" name="password" minlength="8" required autocomplete="new-password" placeholder="At least 8 characters"></label>
+<button class="full">Register</button></form><p class="muted center">Already registered? <a href="{{ url_for('login') }}">Login</a></p></div></section>{% endblock %}

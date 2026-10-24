@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Issue Book{% endblock %}
+{% block content %}<div class="page-head"><div><p class="eyebrow">CIRCULATION</p><h1>Issue a book</h1><p class="muted">Choose a registered student and an available title.</p></div></div><form method="post" class="panel form narrow">
+<label>Student *<select name="user_id" required><option value="">Choose student</option>{% for s in students %}<option value="{{ s.id }}">{{ s.name }} — {{ s.email }}</option>{% endfor %}</select></label>
+<label>Available book *<select name="book_id" required><option value="">Choose book</option>{% for b in books %}<option value="{{ b.id }}">{{ b.title }} — {{ b.author }} ({{ b.available_copies }} available)</option>{% endfor %}</select></label>
+<label>Loan period (days)<input type="number" name="days" value="14" min="1" max="90" required></label>
+<button class="full">Confirm issue</button><p class="muted small">The issue date is set to today. Fine is ₹5 per day after the due date.</p></form>{% endblock %}
